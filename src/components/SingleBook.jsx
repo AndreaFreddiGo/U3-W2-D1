@@ -13,10 +13,10 @@ class SingleBook extends Component {
         {this.state.selected && (
           <CommentArea selectedBook={this.props.book.asin} />
         )}
-        <Col xs={12} md={4} lg={3}>
+        <Col xs={12} md={4} lg={3} className="m-2">
           <Card
-            onClick={() => {
-              console.log(this.props.book)
+            onClick={(e) => {
+              this.props.selectBook(e.asin)
               this.setState({ selected: !this.state.selected })
             }}
             className={`h-100 border-3 p-2 d-flex flex-column ${

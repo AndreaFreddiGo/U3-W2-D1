@@ -9,8 +9,7 @@ class CommentArea extends Component {
 
   getReviews = () => {
     fetch(
-      'https://striveschool-api.herokuapp.com/api/comments/' +
-        this.props.selectedBook,
+      'https://striveschool-api.herokuapp.com/api/comments/' + this.props.asin,
       {
         headers: {
           Authorization:
@@ -42,7 +41,7 @@ class CommentArea extends Component {
     return (
       <div>
         <CommentList array={this.state.reviews} />
-        <AddComment bookId={this.props.selectedBook} />
+        <AddComment bookId={this.props.asin} />
       </div>
     )
   }
